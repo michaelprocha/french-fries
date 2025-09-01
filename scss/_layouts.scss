@@ -5,10 +5,13 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+    padding: calc(15 / 16 * 1rem) calc(var.$padding-spacing / 16 * 1rem);
 }
 
 header>div{
     width: 100%;
     max-width: calc(var.$content-spacing / 16 * 1rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

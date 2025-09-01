@@ -44,12 +44,32 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 3.125rem;
+  padding: 0.9375rem 3.125rem;
 }
 
 header > div {
   width: 100%;
   max-width: 75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo__title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #00334E;
+  text-transform: uppercase;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo__image {
+  max-width: 3rem;
+  width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */

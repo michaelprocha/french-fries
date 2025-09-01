@@ -1,0 +1,14 @@
+@use "variables" as var;
+
+header{
+    background-color: var.$segundary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+}
+
+header>div{
+    width: 100%;
+    max-width: calc(var.$content-spacing / 16 * 1rem);
+}

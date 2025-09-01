@@ -63,6 +63,13 @@ header > div {
   text-transform: uppercase;
 }
 
+.navegation__link {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444444;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -70,6 +77,37 @@ header > div {
 .logo__image {
   max-width: 3rem;
   width: 100%;
+}
+.navegation {
+  max-width: 24.1875rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navegation__link {
+  transition: color 0.4s ease-in-out;
+}
+.navegation__link:hover {
+  color: #00CC99;
+}
+
+.menu {
+  height: 1.0625rem;
+  width: 2.1875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  display: none;
+}
+.menu__line {
+  height: 0.1875rem;
+  width: 1.875rem;
+  background-color: #00334E;
+}
+.menu__line:last-child {
+  width: 0.9375rem;
 }
 
 /*# sourceMappingURL=index.css.map */

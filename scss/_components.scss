@@ -8,6 +8,13 @@
     text-transform: uppercase;
 }
 
+%navegation-text{
+    font-family: var.$primary-font;
+    font-size: calc(var.$base-size / 16 * 1rem);
+    font-weight: var.$medium-weight;
+    color: var.$detail-color1;
+}
+
 .logo{
     display: flex;
     align-items: center;
@@ -19,5 +26,42 @@
 
     &__title{
         @extend %logo-title;
+    }
+}
+
+.navegation{   
+    max-width: calc(387 / 16 * 1rem);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__link{
+        @extend %navegation-text;
+        transition: color 0.4s ease-in-out;
+
+        &:hover{
+            color: var.$tertiary-color;
+        }
+    }
+}
+
+.menu{
+    height: calc(17 / 16 * 1rem);
+    width: calc(35 / 16 * 1rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    display: none;
+
+    &__line{
+        height: calc(3 / 16 * 1rem);
+        width: calc(30 / 16 * 1rem);
+        background-color: var.$primary-color;
+        
+        &:last-child{
+            width: calc(15 / 16 * 1rem);
+        }
     }
 }

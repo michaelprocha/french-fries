@@ -1,5 +1,7 @@
 @use "variables" as var;
 
+//header
+
 header {
     background-color: var.$segundary-color;
     display: flex;
@@ -111,4 +113,26 @@ header > div {
     100% {
         display: none;
     }
+}
+
+
+// banner
+main{
+    background-color: var.$background-color;
+}
+
+.section-banner{
+    width: 100%;
+    background-color: var.$segundary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner{
+    padding: calc(25 / 16 * 1rem) calc(var.$padding-spacing / 16 * 1rem);
+    max-width: calc(var.$content-spacing / 16 * 1rem);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

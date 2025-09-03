@@ -15,6 +15,27 @@
     color: var.$detail-color1;
 }
 
+%hero-title {
+    font-family: var.$primary-font;
+    font-size: calc(var.$xxlarge-size / 16 * 1rem);
+    font-weight: var.$bold-weight;
+    color: var.$primary-color;
+}
+
+%hero-text {
+    font-family: var.$primary-font;
+    font-size: calc(var.$xmedium-size / 16 * 1rem);
+    font-weight: var.$regular-weight;
+    color: var.$primary-color;
+}
+
+%hero-input {
+    font-family: var.$primary-font;
+    font-size: calc(var.$small-size / 16 * 1rem);
+    font-weight: var.$regular-weight;
+    color: var.$primary-color;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -105,15 +126,14 @@
         bottom: 0%;
         right: 40%;
         transition: 0.5s;
-        
+
         &:last-child {
             transform: rotate(-45deg);
         }
     }
-    
-    &:hover .close__line{
-        background-color: var.$detail-color3;
 
+    &:hover .close__line {
+        background-color: var.$detail-color3;
     }
 }
 
@@ -151,4 +171,115 @@
         opacity: 0;
         display: none;
     }
+}
+
+//banner
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: calc(20 / 16 * 1rem);
+
+    &__title {
+        padding: calc(40 / 16 * 1rem) 0 0 0;
+        @extend %hero-title;
+        width: calc(600 / 16 * 1rem);
+    }
+
+    &__text {
+        @extend %hero-text;
+    }
+
+    &__input-area {
+        display: flex;
+    }
+
+    &__input {
+        width: calc(360 / 16 * 1rem);
+        background-color: var.$background-color;
+        padding: calc(22 / 16 * 1rem) 0 calc(22 / 16 * 1rem) calc(55 / 16 * 1rem);
+        border-radius: 8px 0 0 8px;
+        background-image: url(../assets/images/whatsapp.png);
+        background-repeat: no-repeat;
+        background-size: 6%;
+        background-position: 5% 50%;
+        @extend %hero-input;
+
+        &::placeholder {
+            @extend %hero-input;
+        }
+    }
+
+    &__button {
+        height: calc(63.5 / 16 * 1rem);
+        width: calc(60 / 16 * 1rem);
+        background-color: var.$primary-color;
+        border-radius: 0 8px 8px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.animation-arrow {
+    animation-name: arrow-motion;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes arrow-motion {
+    0% {
+        margin: 0 12px 0 0;
+    }
+    25% {
+        margin: 0 6px 0 0;
+    }
+    50% {
+        margin: 0 3px 0 0;
+    }
+    75% {
+        margin: 0 0 0 6px;
+    }
+    100% {
+        margin: 0 0 0 12px;
+    }
+}
+
+.container-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__image {
+        animation-name: delivery;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+    }
+}
+
+@keyframes delivery {
+    0% {
+        margin: 0 0 0 800px;
+    }
+    20% {
+        margin: 0 0 0 400px;
+    }
+    40% {
+        margin: 0 0 0 200px;
+    }
+    60% {
+        margin: 0 0 0 100px;
+    }
+    80% {
+        margin: 0 0 50px 0;
+    }
+    100% {
+        margin: 0 0 0 0;
+    }
+    // from{
+    //     margin-left: 600px;
+    // }
+    // to{
+    //     margin-left: 0;
+    // }
 }

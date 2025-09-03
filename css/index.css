@@ -147,6 +147,26 @@ header > div {
     display: none;
   }
 }
+main {
+  background-color: #FFFFFF;
+}
+
+.section-banner {
+  width: 100%;
+  background-color: #FFF2D9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  padding: 1.5625rem 3.125rem;
+  max-width: 75rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .logo__title {
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
@@ -160,6 +180,27 @@ header > div {
   font-size: 1rem;
   font-weight: 500;
   color: #444444;
+}
+
+.hero__title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 3.25rem;
+  font-weight: 700;
+  color: #00334E;
+}
+
+.hero__text {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #00334E;
+}
+
+.hero__input::placeholder, .hero__input {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #00334E;
 }
 
 .logo {
@@ -282,6 +323,94 @@ header > div {
   100% {
     opacity: 0;
     display: none;
+  }
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.hero__title {
+  padding: 2.5rem 0 0 0;
+  width: 37.5rem;
+}
+.hero__input-area {
+  display: flex;
+}
+.hero__input {
+  width: 22.5rem;
+  background-color: #FFFFFF;
+  padding: 1.375rem 0 1.375rem 3.4375rem;
+  border-radius: 8px 0 0 8px;
+  background-image: url(../assets/images/whatsapp.png);
+  background-repeat: no-repeat;
+  background-size: 6%;
+  background-position: 5% 50%;
+}
+.hero__button {
+  height: 3.96875rem;
+  width: 3.75rem;
+  background-color: #00334E;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation-arrow {
+  animation-name: arrow-motion;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrow-motion {
+  0% {
+    margin: 0 12px 0 0;
+  }
+  25% {
+    margin: 0 6px 0 0;
+  }
+  50% {
+    margin: 0 3px 0 0;
+  }
+  75% {
+    margin: 0 0 0 6px;
+  }
+  100% {
+    margin: 0 0 0 12px;
+  }
+}
+.container-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-image__image {
+  animation-name: delivery;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes delivery {
+  0% {
+    margin: 0 0 0 800px;
+  }
+  20% {
+    margin: 0 0 0 400px;
+  }
+  40% {
+    margin: 0 0 0 200px;
+  }
+  60% {
+    margin: 0 0 0 100px;
+  }
+  80% {
+    margin: 0 0 50px 0;
+  }
+  100% {
+    margin: 0 0 0 0;
   }
 }
 

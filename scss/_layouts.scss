@@ -14,4 +14,36 @@ header>div{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
+
+.menu-modal{
+    display: none;
+    
+    &--enabled{
+        position: fixed;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;
+        left: 0%;
+        height: 100vh;
+        width: 100%;
+        background-color: var.$detail-color4;
+        display: flex;
+    }
+}
+
+.menu-navegation{
+    display: none;
+    height: 100dvh;
+    width: 25dvh;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    background-color: var.$background-color;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+

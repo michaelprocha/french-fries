@@ -27,12 +27,27 @@
 					<a class="navegation__link" href="#">Vantagens</a>
 					<a class="navegation__link" href="#">Depoimentos</a>
 				</nav>
-				<div class="menu">
-					<div class="menu__line"></div>
-					<div class="menu__line"></div>
-					<div class="menu__line"></div>
+				<div id="menu" class="menu" role="button" aria-label="Abre menu de navegação">
+					<div class="menu__line" aria-hidden="true"></div>
+					<div class="menu__line" aria-hidden="true"></div>
+					<div class="menu__line" aria-hidden="true"></div>
+				</div>
+				<div id="modal" class="menu-modal menu-modal--disabled">
+					<div class="menu-navegation">
+						<div class="close" role="button" aria-label="Fecha o menu de navegação">
+							<div class="close__line"></div>
+							<div class="close__line"></div>
+						</div>
+						<nav class="navegation navegation--menu">
+							<a class="navegation__link navegation--menu__link--menu" href="#">Home</a>
+							<a class="navegation__link navegation--menu__link--menu" href="#">Cardapio</a>
+							<a class="navegation__link navegation--menu__link--menu" href="#">Vantagens</a>
+							<a class="navegation__link navegation--menu__link--menu" href="#">Depoimentos</a>
+						</nav>
+					</div>
 				</div>
 			</div>
 		</header>
+		<script src="javascript/index.js"></script>
 	</body>
 </html>

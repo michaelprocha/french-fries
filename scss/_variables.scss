@@ -5,6 +5,8 @@ $tertiary-color: #00CC99;
 $background-color: #FFFFFF;
 $detail-color1: #444444;
 $detail-color2: #DCDCDC;
+$detail-color3: #ca1919;
+$detail-color4: rgb(0, 0, 0, 0.5);
 
 //fonts
 $primary-font: "DM Sans", sans-serif;
@@ -27,3 +29,14 @@ $xxlarge-size: 52;
 //spacing
 $content-spacing: 1200;
 $padding-spacing: 50;
+
+//breakpoints
+$notebook: 940px;
+
+@mixin breakpoints($size){
+    @if $size == $notebook{
+        @media screen and (max-width: 940px) {
+            @content
+        }
+    }
+}

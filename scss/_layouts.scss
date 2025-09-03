@@ -1,6 +1,6 @@
 @use "variables" as var;
 
-header{
+header {
     background-color: var.$segundary-color;
     display: flex;
     align-items: center;
@@ -8,7 +8,7 @@ header{
     padding: calc(15 / 16 * 1rem) calc(var.$padding-spacing / 16 * 1rem);
 }
 
-header>div{
+header > div {
     width: 100%;
     max-width: calc(var.$content-spacing / 16 * 1rem);
     display: flex;
@@ -17,24 +17,27 @@ header>div{
     position: relative;
 }
 
-.menu-modal{
-    display: none;
-    
-    &--enabled{
-        position: fixed;
-        right: 0%;
-        top: 0%;
-        bottom: 0%;
-        left: 0%;
-        height: 100vh;
-        width: 100%;
-        background-color: var.$detail-color4;
-        display: flex;
+.menu-modal {
+    background-color: var.$detail-color4;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: block;
+
+    &--disabled {
+        animation-name: close;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        display: none;
     }
 }
 
-.menu-navegation{
-    display: none;
+.menu-navegation {
     height: 100dvh;
     width: 25dvh;
     position: fixed;
@@ -44,6 +47,68 @@ header>div{
     background-color: var.$background-color;
     display: flex;
     flex-direction: column;
-    gap: 6rem;
+    gap: 3rem;
+    animation-name: slide-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+
+    &--disabled {
+        animation-name: slide-out;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        display: none;
+    }
 }
 
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+        opacity: 0.1;
+    }
+    20% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 0.7;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+        display: flex;
+    }
+    20% {
+        opacity: 0.7;
+    }
+    40% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 0.3;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0.1;
+        display: none;
+    }
+}
+
+@keyframes close {
+    0% {
+        display: block;
+    }
+    100% {
+        display: none;
+    }
+}

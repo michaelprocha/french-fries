@@ -61,6 +61,14 @@
 
     @include var.breakpoints(var.$notebook) {
         display: flex;
+
+        &--disabled {
+            animation-name: menu-disabled;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            display: none;
+        }
     }
 
     &__line {
@@ -85,21 +93,27 @@
     position: relative;
     cursor: pointer;
     align-self: flex-end;
-    padding: 2rem 6rem 0 0;
+    margin: calc(30 / 16 * 1rem) calc(30 / 16 * 1rem) 0 0;
 
     &__line {
-        background-color: var.$detail-color3;
+        background-color: var.$detail-color5;
         width: calc(6 / 16 * 1rem);
         height: calc(30 / 16 * 1rem);
         transform: rotate(45deg);
         position: absolute;
-        // top: 50%;
-        left: 40%;
-        translate: (-50%, -50%);
-
+        top: 0%;
+        bottom: 0%;
+        right: 40%;
+        transition: 0.5s;
+        
         &:last-child {
             transform: rotate(-45deg);
         }
+    }
+    
+    &:hover .close__line{
+        background-color: var.$detail-color3;
+
     }
 }
 
@@ -111,7 +125,30 @@
     &__link--menu {
         text-transform: uppercase;
         font-weight: var.$medium-weight;
-        font-size: calc( var.$xmedium-size / 16 * 1rem);
+        font-size: calc(var.$xmedium-size / 16 * 1rem);
         text-shadow: 1px 1px 2px var.$detail-color1;
+    }
+}
+
+@keyframes menu-disabled {
+    0% {
+        display: flex;
+        opacity: 1;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    60% {
+        opacity: 0.4;
+    }
+    80% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+        display: none;
     }
 }

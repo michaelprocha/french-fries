@@ -68,11 +68,14 @@ header > div {
   display: block;
 }
 .menu-modal--disabled {
+  display: none;
+}
+
+.close-animation {
   animation-name: close;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
-  display: none;
 }
 
 .menu-navegation {
@@ -92,26 +95,20 @@ header > div {
   animation-iteration-count: 1;
 }
 .menu-navegation--disabled {
+  display: none;
+}
+
+.slide-out {
   animation-name: slide-out;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  display: none;
 }
 
 @keyframes slide-in {
-  0% {
+  from {
     transform: translateX(100%);
     opacity: 0.1;
-  }
-  20% {
-    opacity: 0.3;
-  }
-  40% {
-    opacity: 0.5;
-  }
-  60% {
-    opacity: 0.7;
   }
   to {
     transform: translateX(0);
@@ -119,19 +116,10 @@ header > div {
   }
 }
 @keyframes slide-out {
-  0% {
+  from {
     transform: translateX(0);
     opacity: 1;
     display: flex;
-  }
-  20% {
-    opacity: 0.7;
-  }
-  40% {
-    opacity: 0.5;
-  }
-  60% {
-    opacity: 0.3;
   }
   to {
     transform: translateX(100%);
@@ -140,10 +128,10 @@ header > div {
   }
 }
 @keyframes close {
-  0% {
+  from {
     display: block;
   }
-  100% {
+  to {
     display: none;
   }
 }

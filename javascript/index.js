@@ -1,19 +1,23 @@
 (function () {
 	const menu = document.getElementById("menu");
 	const modal = document.getElementById("modal");
-	const clone = document.getElementById("close");
+	const close = document.getElementById("close");
 	const menuNavegation = document.getElementById("menu-navegation");
 
 	menu.addEventListener("click", () => {
-		modal.classList.toggle("menu-modal--disabled");
-		menuNavegation.classList.toggle("menu-navegation--disabled");
+		if (modal.classList.contains("menu-modal--disabled")) {
+			modal.classList.remove("menu-modal--disabled");
+			menuNavegation.classList.remove("menu-navegation--disabled");
+		}
 		menu.classList.toggle("menu--disabled");
+		modal.classList.remove("close-animation");
+		menuNavegation.classList.remove("slide-out");
 	});
 
-	clone.addEventListener("click", () => {
-		modal.classList.toggle("menu-modal--disabled");
-		menuNavegation.classList.toggle("menu-navegation--disabled");
+	close.addEventListener("click", () => {
 		menu.classList.toggle("menu--disabled");
+		modal.classList.add("close-animation");
+		menuNavegation.classList.add("slide-out");
 	});
 
 	const arrow = document.querySelector(".hero__button img");

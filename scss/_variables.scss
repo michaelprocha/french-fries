@@ -32,11 +32,11 @@ $content-spacing: 1200;
 $padding-spacing: 50;
 
 //breakpoints
-$notebook: 940px;
+$notebook: 1050px;
 
 @mixin breakpoints($size){
     @if $size == $notebook{
-        @media screen and (max-width: 940px) {
+        @media screen and (max-width: 1050px) {
             @content
         }
     }

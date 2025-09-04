@@ -122,4 +122,10 @@ main {
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    @include var.breakpoints(var.$notebook){
+        flex-direction: column;
+        align-items: center;
+        gap: calc(50 / 16 * 1rem);
+    }
 }

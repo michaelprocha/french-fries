@@ -167,10 +167,19 @@
     flex-direction: column;
     gap: calc(20 / 16 * 1rem);
 
+    @include var.breakpoints(var.$notebook) {
+        align-items: center;
+        text-align: center;
+    }
+
     &__title {
         padding: calc(40 / 16 * 1rem) 0 0 0;
         @extend %hero-title;
         width: calc(600 / 16 * 1rem);
+        
+        @include var.breakpoints(var.$notebook) {
+            padding: calc(20 / 16 * 1rem) 0 0 0;
+        }
     }
 
     &__text {

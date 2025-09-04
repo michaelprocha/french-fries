@@ -292,23 +292,11 @@ main {
 }
 
 @keyframes menu-disabled {
-  0% {
+  from {
     display: flex;
     opacity: 1;
   }
-  20% {
-    opacity: 0.8;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  60% {
-    opacity: 0.4;
-  }
-  80% {
-    opacity: 0.2;
-  }
-  100% {
+  to {
     opacity: 0;
     display: none;
   }
@@ -354,19 +342,19 @@ main {
 
 @keyframes arrow-motion {
   0% {
-    margin: 0 12px 0 0;
+    margin: 0 0 0 0;
   }
   25% {
-    margin: 0 6px 0 0;
+    margin: 0 15px 0 0;
   }
   50% {
-    margin: 0 3px 0 0;
+    margin: 0 0 0 0;
   }
   75% {
-    margin: 0 0 0 6px;
+    margin: 0 0 0 15px;
   }
   100% {
-    margin: 0 0 0 12px;
+    margin: 0 0 0 0;
   }
 }
 .container-image {
@@ -377,28 +365,22 @@ main {
 .container-image__image {
   animation-name: delivery;
   animation-duration: 1.5s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in;
   animation-iteration-count: 1;
 }
 
 @keyframes delivery {
   0% {
-    margin: 0 0 0 800px;
+    transform: translateX(1000px);
   }
-  20% {
-    margin: 0 0 0 400px;
-  }
-  40% {
-    margin: 0 0 0 200px;
-  }
-  60% {
-    margin: 0 0 0 100px;
+  70% {
+    transform: translateX(0px);
   }
   80% {
-    margin: 0 0 50px 0;
+    transform: translateX(-20px);
   }
   100% {
-    margin: 0 0 0 0;
+    transform: translateX(0);
   }
 }
 

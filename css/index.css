@@ -140,6 +140,7 @@ main {
 }
 
 .section-banner {
+  padding: 1.5625rem 3.125rem;
   width: 100%;
   background-color: #FFF2D9;
   display: flex;
@@ -148,7 +149,6 @@ main {
 }
 
 .banner {
-  padding: 1.5625rem 3.125rem;
   max-width: 75rem;
   width: 100%;
   display: flex;
@@ -160,6 +160,11 @@ main {
     align-items: center;
     gap: 3.125rem;
   }
+}
+
+.section-dishes {
+  display: flex;
+  justify-content: center;
 }
 
 .logo__title {
@@ -195,6 +200,20 @@ main {
   font-family: "DM Sans", sans-serif;
   font-size: 0.8125rem;
   font-weight: 400;
+  color: #00334E;
+}
+
+.dishes__subtitle {
+  font-family: "DM Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00334E;
+}
+
+.dishes-item__title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
   color: #00334E;
 }
 
@@ -400,6 +419,28 @@ main {
   100% {
     transform: translateX(0);
   }
+}
+.dishes {
+  padding-top: 6.25rem;
+  width: 100%;
+  max-width: 75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dishes__subtitle {
+  padding-bottom: 1.5625rem;
+}
+.dishes__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 3.4375rem 2.5rem;
+}
+
+.dishes-item__title {
+  padding: 1.25rem 0 0.625rem 0;
 }
 
 /*# sourceMappingURL=index.css.map */

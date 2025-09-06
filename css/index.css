@@ -217,6 +217,13 @@ main {
   color: #00334E;
 }
 
+.dishes-item__text, .dishes__button {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #00334E;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -435,12 +442,45 @@ main {
 .dishes__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 3.4375rem 2.5rem;
+  padding-bottom: 2.1875rem;
+}
+.dishes__button {
+  padding: 0.9375rem 2.6875rem;
+  color: #FFFFFF;
+  background-color: #00CC99;
+  border-radius: 200px;
+  position: relative;
+}
+.dishes__button::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 70px;
+  left: -16px;
+  top: -8px;
+  transform: rotate(26deg);
+  background-color: #FFFFFF;
+  opacity: 0.4;
 }
 
 .dishes-item__title {
   padding: 1.25rem 0 0.625rem 0;
+}
+.shine::before {
+  animation-name: shine;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shine {
+  from {
+    left: -16px;
+  }
+  to {
+    left: 175px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

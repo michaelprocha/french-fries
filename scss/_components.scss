@@ -36,18 +36,24 @@
     color: var.$primary-color;
 }
 
-%dishes-title{
+%dishes-title {
     font-family: var.$primary-font;
     font-size: calc(var.$large-size / 16 * 1rem);
     font-weight: var.$bold-weight;
     color: var.$primary-color;
 }
 
-
-%dishes-test{
+%dishes-subtitle {
     font-family: var.$primary-font;
     font-size: calc(var.$medium-size / 16 * 1rem);
     font-weight: var.$bold-weight;
+    color: var.$primary-color;
+}
+
+%dishes-text {
+    font-family: var.$primary-font;
+    font-size: calc(var.$base-size / 16 * 1rem);
+    font-weight: var.$regular-weight;
     color: var.$primary-color;
 }
 
@@ -191,7 +197,7 @@
         padding: calc(40 / 16 * 1rem) 0 0 0;
         @extend %hero-title;
         width: calc(600 / 16 * 1rem);
-        
+
         @include var.breakpoints(var.$notebook) {
             padding: calc(20 / 16 * 1rem) 0 0 0;
         }
@@ -286,7 +292,7 @@
 
 //dishes
 
-.dishes{
+.dishes {
     padding-top: calc(100 / 16 * 1rem);
     width: 100%;
     max-width: calc(var.$content-spacing / 16 * 1rem);
@@ -295,28 +301,64 @@
     align-items: center;
     justify-content: center;
 
-    &__subtitle{
+    &__subtitle {
         @extend %dishes-title;
         padding-bottom: calc(25 / 16 * 1rem);
     }
 
-    &__list{
+    &__list {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         gap: calc(55 / 16 * 1rem) calc(40 / 16 * 1rem);
+        padding-bottom: calc(35 / 16 * 1rem);
+    }
+
+    &__button {
+        padding: calc(15 / 16 * 1rem) calc(43 / 16 * 1rem);
+        @extend %dishes-text;
+        color: var.$background-color;
+        background-color: var.$tertiary-color;
+        border-radius: 200px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 70px;
+            left: -16px;
+            top: -8px;
+            transform: rotate(26deg);
+            background-color: var.$background-color;
+            opacity: 0.4;
+        }
     }
 }
 
-.dishes-item{
-    &__image{
-
+.dishes-item {
+    &__image {
     }
-    &__title{
-        @extend %dishes-test;
+    &__title {
+        @extend %dishes-subtitle;
         padding: calc(20 / 16 * 1rem) 0 calc(10 / 16 * 1rem) 0;
     }
-    &__text{
+    &__text {
+        @extend %dishes-text;
+    }
+}
 
+.shine::before {
+    animation-name: shine;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes shine {
+    from {
+        left: -16px;
+    }
+    to {
+        left: 175px;
     }
 }

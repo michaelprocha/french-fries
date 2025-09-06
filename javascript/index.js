@@ -25,4 +25,13 @@
 	setInterval(() => {
 		arrow.classList.toggle("animation-arrow");
 	}, 3000);
+
+	const btnOrderNow = document.querySelector(".dishes__button");
+	setInterval(() => {
+		btnOrderNow.classList.add("shine");
+	}, 2500)
+
+	setInterval(() => {
+		btnOrderNow.classList.remove("shine");
+	}, 1000)
 })();

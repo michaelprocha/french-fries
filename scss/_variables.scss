@@ -1,10 +1,10 @@
 //colors
-$primary-color: #00334E;
-$segundary-color: #FFF2D9;
-$tertiary-color: #00CC99;
-$background-color: #FFFFFF;
+$primary-color: #00334e;
+$segundary-color: #fff2d9;
+$tertiary-color: #00cc99;
+$background-color: #ffffff;
 $detail-color1: #444444;
-$detail-color2: #DCDCDC;
+$detail-color2: #dcdcdc;
 $detail-color3: #eb1010;
 $detail-color4: rgb(0, 0, 0, 0.5);
 $detail-color5: #b42c2c;
@@ -30,14 +30,25 @@ $xxlarge-size: 52;
 //spacing
 $content-spacing: 1200;
 $padding-spacing: 50;
+$padding-spacing-small: 25;
 
 //breakpoints
 $notebook: 1050px;
+$tablet: 820px;
+$mobile: 580px;
 
-@mixin breakpoints($size){
-    @if $size == $notebook{
+@mixin breakpoints($size) {
+    @if $size == $notebook {
         @media screen and (max-width: 1050px) {
-            @content
+            @content;
+        }
+    } @else if $size == $tablet {
+        @media screen and (max-width: 820px) {
+            @content;
+        }
+    } @else if $size == $mobile {
+        @media screen and (max-width: 580px) {
+            @content;
         }
     }
 }

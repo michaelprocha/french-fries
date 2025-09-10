@@ -57,6 +57,13 @@
     color: var.$primary-color;
 }
 
+%order-number {
+    font-family: var.$primary-font;
+    font-size: calc(var.$xxmedium-size / 16 * 1rem);
+    font-weight: var.$bold-weight;
+    color: var.$background-color;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -435,5 +442,64 @@
     }
     to {
         left: 175px;
+    }
+}
+
+//order
+
+.order {
+    padding: calc(125 / 16 * 1rem) 0 calc(135 / 16 * 1rem) 0;
+
+    &__title {
+        @extend %dishes-title;
+        text-align: center;
+        padding-bottom: calc(45 / 16 * 1rem);
+    }
+    &__list {
+        display: flex;
+        gap: calc(40 / 16 * 1rem);
+
+        @include var.breakpoints(var.$desktop) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.order-item {
+    max-width: calc(359 / 16 * 1rem);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__number {
+        background-color: var.$tertiary-color;
+        width: 100%;
+        height: 100%;
+        max-width: calc(40 / 16 * 1rem);
+        max-height: calc(40 / 16 * 1rem);
+        border: solid 1px var.$tertiary-color;
+        border-radius: calc(20 / 16 * 1rem);
+        position: absolute;
+        top: 0;
+        right: 65%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @extend %order-number;
+    }
+
+    &__title {
+        @extend %dishes-subtitle;
+        padding: calc(18 / 16 * 1rem) 0 calc(10 / 16 * 1rem) 0;
+    }
+
+    &__text {
+        text-align: center;
+        @extend %dishes-text;
     }
 }

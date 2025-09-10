@@ -147,3 +147,15 @@ main {
         padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
     }
 }
+
+//order
+
+.section-order {
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include var.breakpoints(var.$tablet) {
+        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}

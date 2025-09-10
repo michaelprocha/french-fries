@@ -33,6 +33,7 @@ $padding-spacing: 50;
 $padding-spacing-small: 25;
 
 //breakpoints
+$desktop: 1250px;
 $notebook: 1050px;
 $tablet: 820px;
 $mobile: 580px;
@@ -48,6 +49,10 @@ $mobile: 580px;
         }
     } @else if $size == $mobile {
         @media screen and (max-width: 580px) {
+            @content;
+        }
+    } @else if $size == $desktop {
+        @media screen and (max-width: 1250px) {
             @content;
         }
     }

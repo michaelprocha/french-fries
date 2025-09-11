@@ -503,3 +503,28 @@
         @extend %dishes-text;
     }
 }
+
+//advantages
+
+.advantages{
+    padding: calc(100 / 16 * 1rem) 0;
+    display: flex;
+    justify-content: center;
+    gap: calc(60 / 16 * 1rem);
+
+    &__container-img{
+        background-color: var.$segundary-color;
+        border: solid 1px var.$segundary-color;
+        border-radius: 25px;
+        position: relative;
+        width: calc(514 / 16 * 1rem);
+        height: calc(382 / 16 * 1rem);
+        align-self: flex-end;
+    }
+
+    &__img{
+        position: absolute;
+        top: -25%;
+        left: 0;
+    }
+}

@@ -633,6 +633,14 @@ main {
 @media screen and (max-width: 1250px) {
   .order__list {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 820px) {
+  .order__list {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -675,6 +683,14 @@ main {
   justify-content: center;
   gap: 3.75rem;
 }
+@media screen and (max-width: 820px) {
+  .advantages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .advantages__container-img {
   background-color: #fff2d9;
   border: solid 1px #fff2d9;
@@ -682,7 +698,18 @@ main {
   position: relative;
   width: 32.125rem;
   height: 23.875rem;
-  align-self: flex-end;
+}
+@media screen and (max-width: 1250px) {
+  .advantages__container-img {
+    width: 25.875rem;
+    height: 19.5rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .advantages__container-img {
+    width: 19rem;
+    height: 14.5rem;
+  }
 }
 .advantages__img {
   position: absolute;
@@ -690,8 +717,20 @@ main {
   left: 0;
   animation: rocket 2.8s ease-in-out infinite;
 }
+@media screen and (max-width: 580px) {
+  .advantages__img {
+    width: 100%;
+  }
+}
 .advantages__title {
   padding-bottom: 2.875rem;
+}
+@media screen and (max-width: 1250px) {
+  .advantages__title {
+    padding-bottom: 1.625rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 .advantages__list {
   counter-reset: item;
@@ -700,6 +739,11 @@ main {
   counter-increment: item;
   position: relative;
   padding: 0 0 2.5rem 4.0625rem;
+}
+@media screen and (max-width: 1050px) {
+  .advantages__item {
+    padding: 0 0 1.25rem 4.0625rem;
+  }
 }
 .advantages__item::before {
   content: "0" counter(item);

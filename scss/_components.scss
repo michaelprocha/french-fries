@@ -461,6 +461,13 @@
 
         @include var.breakpoints(var.$desktop) {
             display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @include var.breakpoints(var.$tablet) {
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -512,6 +519,13 @@
     justify-content: center;
     gap: calc(60 / 16 * 1rem);
 
+    @include var.breakpoints(var.$tablet) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     &__container-img {
         background-color: var.$segundary-color;
         border: solid 1px var.$segundary-color;
@@ -519,7 +533,16 @@
         position: relative;
         width: calc(514 / 16 * 1rem);
         height: calc(382 / 16 * 1rem);
-        align-self: flex-end;
+
+        @include var.breakpoints(var.$desktop) {
+            width: calc(414 / 16 * 1rem);
+            height: calc(312 / 16 * 1rem);
+        }
+
+        @include var.breakpoints(var.$mobile) {
+            width: calc(304 / 16 * 1rem);
+            height: calc(232 / 16 * 1rem);
+        }
     }
 
     &__img {
@@ -527,11 +550,21 @@
         top: -25%;
         left: 0;
         animation: rocket 2.8s ease-in-out infinite;
+
+        @include var.breakpoints(var.$mobile) {
+            width: 100%;
+        }
     }
 
     &__title {
         @extend %dishes-title;
         padding-bottom: calc(46 / 16 * 1rem);
+
+        @include var.breakpoints(var.$desktop) {
+            padding-bottom: calc(26 / 16 * 1rem);
+            font-size: calc(var.$xxmedium-size / 16 * 1rem);
+            text-align: center;
+        }
     }
 
     &__list {
@@ -542,6 +575,10 @@
         counter-increment: item;
         position: relative;
         padding: 0 0 calc(40 / 16 * 1rem) calc(65 / 16 * 1rem);
+        
+        @include var.breakpoints(var.$notebook) {
+            padding: 0 0 calc(20 / 16 * 1rem) calc(65 / 16 * 1rem);
+        }
 
         &::before {
             content: "0" counter(item);

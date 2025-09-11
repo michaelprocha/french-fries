@@ -208,7 +208,7 @@ main {
   }
 }
 
-.logo__title {
+.advantages__subtitle, .logo__title {
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -244,7 +244,7 @@ main {
   color: #00334e;
 }
 
-.order__title, .dishes__subtitle {
+.advantages__title, .order__title, .dishes__subtitle {
   font-family: "DM Sans", sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -258,7 +258,7 @@ main {
   color: #00334e;
 }
 
-.order-item__text, .dishes-item__text, .dishes__button {
+.advantages__text, .order-item__text, .dishes-item__text, .dishes__button {
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -688,6 +688,43 @@ main {
   position: absolute;
   top: -25%;
   left: 0;
+  animation: rocket 2.8s ease-in-out infinite;
+}
+.advantages__title {
+  padding-bottom: 2.875rem;
+}
+.advantages__list {
+  counter-reset: item;
+}
+.advantages__item {
+  counter-increment: item;
+  position: relative;
+  padding: 0 0 2.5rem 4.0625rem;
+}
+.advantages__item::before {
+  content: "0" counter(item);
+  position: absolute;
+  left: 0%;
+  top: -8%;
+  font-family: "DM Sans", sans-serif;
+  font-size: 2.625rem;
+  font-weight: 400;
+  color: #dcdcdc;
+}
+.advantages__subtitle {
+  text-transform: none;
+  padding-bottom: 0.125rem;
+}
+@keyframes rocket {
+  0% {
+    top: -25%;
+  }
+  50% {
+    top: -35%;
+  }
+  100% {
+    top: -25%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

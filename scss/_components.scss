@@ -506,13 +506,13 @@
 
 //advantages
 
-.advantages{
+.advantages {
     padding: calc(100 / 16 * 1rem) 0;
     display: flex;
     justify-content: center;
     gap: calc(60 / 16 * 1rem);
 
-    &__container-img{
+    &__container-img {
         background-color: var.$segundary-color;
         border: solid 1px var.$segundary-color;
         border-radius: 25px;
@@ -522,9 +522,58 @@
         align-self: flex-end;
     }
 
-    &__img{
+    &__img {
         position: absolute;
         top: -25%;
         left: 0;
+        animation: rocket 2.8s ease-in-out infinite;
+    }
+
+    &__title {
+        @extend %dishes-title;
+        padding-bottom: calc(46 / 16 * 1rem);
+    }
+
+    &__list {
+        counter-reset: item;
+    }
+
+    &__item {
+        counter-increment: item;
+        position: relative;
+        padding: 0 0 calc(40 / 16 * 1rem) calc(65 / 16 * 1rem);
+
+        &::before {
+            content: "0" counter(item);
+            position: absolute;
+            left: 0%;
+            top: -8%;
+            font-family: var.$primary-font;
+            font-size: calc(var.$xlarge-size / 16 * 1rem);
+            font-weight: var.$regular-weight;
+            color: var.$detail-color2;
+        }
+    }
+
+    &__subtitle {
+        @extend %logo-title;
+        text-transform: none;
+        padding-bottom: calc(2 / 16 * 1rem);
+    }
+
+    &__text {
+        @extend %dishes-text;
+    }
+}
+
+@keyframes rocket {
+    0% {
+        top: -25%;
+    }
+    50% {
+        top: -35%;
+    }
+    100% {
+        top: -25%;
     }
 }

@@ -34,4 +34,23 @@
 	setInterval(() => {
 		btnOrderNow.classList.remove("shine");
 	}, 1000)
+
+	const testimonials = Array.from(document.getElementsByClassName("testimonials__text"));
+	const users = Array.from(document.getElementsByClassName("user"));
+
+	users.forEach((user, position, arr) => {
+		user.addEventListener("click", () => {
+			if (position == 0) {
+				testimonials[position].classList.add("testimonials__text--show");
+				testimonials[1].classList.remove("testimonials__text--show");
+				arr[position].classList.add("user--show");
+				arr[1].classList.remove("user--show");
+			}else{
+				testimonials[position].classList.add("testimonials__text--show");
+				testimonials[0].classList.remove("testimonials__text--show");
+				arr[position].classList.add("user--show");
+				arr[0].classList.remove("user--show");
+			}
+		});
+	});
 })();

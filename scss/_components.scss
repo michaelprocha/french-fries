@@ -575,7 +575,7 @@
         counter-increment: item;
         position: relative;
         padding: 0 0 calc(40 / 16 * 1rem) calc(65 / 16 * 1rem);
-        
+
         @include var.breakpoints(var.$notebook) {
             padding: 0 0 calc(20 / 16 * 1rem) calc(65 / 16 * 1rem);
         }
@@ -612,5 +612,73 @@
     }
     100% {
         top: -25%;
+    }
+}
+
+.testimonials {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        @extend %dishes-title;
+        text-align: center;
+        padding-bottom: calc(20 / 16 * 1rem);
+    }
+
+    &__text {
+        @extend %dishes-text;
+        font-size: var.$medium-size;
+        line-height: calc(36 / 16 * 1rem);
+        max-width: calc(500 / 16 * 1rem);
+        display: none;
+
+        &--show {
+            display: flex;
+        }
+    }
+
+    &__users {
+        display: flex;
+        padding-top: calc(38 / 16 * 1rem);
+        justify-content: space-around;
+        gap: calc(10 / 16 * 1rem);
+    }
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: calc(10 / 16 * 1rem);
+    cursor: pointer;
+    opacity: 0.4;
+
+    &--show {
+        opacity: 1;
+    }
+
+    &__image {
+        width: calc(30 / 16 * 1rem);
+    }
+
+    &__name {
+        @extend %logo-title;
+        text-transform: none;
+    }
+}
+
+.rating {
+    width: 100%;
+    max-width: calc(600 / 16 * 1rem);
+
+    @include var.breakpoints(var.$notebook) {
+        width: 80%;
+    }
+
+    @include var.breakpoints(var.$tablet) {
+        width: 100%;
+    }
+
+    &__image {
+        width: 100%;
     }
 }

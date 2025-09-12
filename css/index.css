@@ -61,6 +61,11 @@ header > div {
   position: relative;
 }
 
+section > div {
+  width: 100%;
+  max-width: 75rem;
+}
+
 .menu-modal {
   background-color: rgba(0, 0, 0, 0.5);
   right: 0%;
@@ -208,7 +213,32 @@ main {
   }
 }
 
-.advantages__subtitle, .logo__title {
+.section-review {
+  padding: 0 3.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 820px) {
+  .section-review {
+    padding: 0 1.5625rem;
+  }
+}
+
+.review {
+  padding: 0 0 0 0;
+  display: flex;
+  gap: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 820px) {
+  .review {
+    flex-direction: column;
+  }
+}
+
+.user__name, .advantages__subtitle, .logo__title {
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
   font-weight: 700;
@@ -244,7 +274,7 @@ main {
   color: #00334e;
 }
 
-.advantages__title, .order__title, .dishes__subtitle {
+.testimonials__title, .advantages__title, .order__title, .dishes__subtitle {
   font-family: "DM Sans", sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -258,7 +288,7 @@ main {
   color: #00334e;
 }
 
-.advantages__text, .order-item__text, .dishes-item__text, .dishes__button {
+.testimonials__text, .advantages__text, .order-item__text, .dishes-item__text, .dishes__button {
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -769,6 +799,64 @@ main {
   100% {
     top: -25%;
   }
+}
+.testimonials {
+  display: flex;
+  flex-direction: column;
+}
+.testimonials__title {
+  text-align: center;
+  padding-bottom: 1.25rem;
+}
+.testimonials__text {
+  font-size: 18;
+  line-height: 2.25rem;
+  max-width: 31.25rem;
+  display: none;
+}
+.testimonials__text--show {
+  display: flex;
+}
+.testimonials__users {
+  display: flex;
+  padding-top: 2.375rem;
+  justify-content: space-around;
+  gap: 0.625rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  opacity: 0.4;
+}
+.user--show {
+  opacity: 1;
+}
+.user__image {
+  width: 1.875rem;
+}
+.user__name {
+  text-transform: none;
+}
+
+.rating {
+  width: 100%;
+  max-width: 37.5rem;
+}
+@media screen and (max-width: 1050px) {
+  .rating {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 820px) {
+  .rating {
+    width: 100%;
+  }
+}
+.rating__image {
+  width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */

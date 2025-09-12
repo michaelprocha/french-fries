@@ -22,6 +22,11 @@ header > div {
     position: relative;
 }
 
+section > div {
+    width: 100%;
+    max-width: calc(var.$content-spacing / 16 * 1rem);
+}
+
 .menu-modal {
     background-color: var.$detail-color4;
     right: 0%;
@@ -169,5 +174,29 @@ main {
     justify-content: center;
     @include var.breakpoints(var.$tablet) {
         padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}
+
+// review
+
+.section-review {
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include var.breakpoints(var.$tablet) {
+        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}
+
+.review {
+    padding: 0 0 0 0;
+    display: flex;
+    gap: 0;
+    align-items: center;
+    justify-content: space-between;
+
+    @include var.breakpoints(var.$tablet) {
+        flex-direction: column;
     }
 }

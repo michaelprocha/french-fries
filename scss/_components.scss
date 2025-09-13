@@ -682,3 +682,46 @@
         width: 100%;
     }
 }
+
+// partners
+
+.partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        @extend %dishes-title;
+        padding: calc(26 / 16 * 1rem) 0;
+        text-align: center;
+    }
+
+    &__list {
+        width: 100%;
+        padding-bottom: calc(26 / 16 * 1rem);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: calc(40 / 16 * 1rem);
+
+        @include var.breakpoints(var.$tablet) {
+            flex-direction: column;
+        }
+    }
+}
+
+// copyright
+
+.copyright {
+    padding: calc(25 / 16 * 1rem) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__text {
+        text-align: center;
+        @extend %logo-title;
+        text-transform: none;
+    }
+}

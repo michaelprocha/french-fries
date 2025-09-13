@@ -2,7 +2,14 @@
 
 //header
 
+body{
+    position: relative;
+}
+
 header {
+    width: 100%;
+    position: fixed;
+    z-index: 3;
     background-color: var.$segundary-color;
     display: flex;
     align-items: center;
@@ -114,6 +121,7 @@ section > div {
 
 // banner
 main {
+    padding-top: calc(78 / 16 * 1rem);
     background-color: var.$background-color;
 }
 
@@ -180,17 +188,16 @@ main {
 // review
 
 .section-review {
-    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem) calc(60 / 16 * 1rem) calc(var.$padding-spacing / 16 * 1rem);
     display: flex;
     align-items: center;
     justify-content: center;
     @include var.breakpoints(var.$tablet) {
-        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
+        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem) calc(60 / 16 * 1rem) calc(var.$padding-spacing-small / 16 * 1rem);
     }
 }
 
 .review {
-    padding: 0 0 0 0;
     display: flex;
     gap: 0;
     align-items: center;
@@ -198,5 +205,33 @@ main {
 
     @include var.breakpoints(var.$tablet) {
         flex-direction: column;
+    }
+}
+
+// partners
+
+.section-partners {
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var.$segundary-color;
+
+    @include var.breakpoints(var.$tablet) {
+        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}
+
+//copyright
+
+.section-copyright {
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var.$background-color;
+
+    @include var.breakpoints(var.$tablet) {
+        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
     }
 }

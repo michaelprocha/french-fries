@@ -22,10 +22,10 @@
 					<h1 class="logo__title">French fries</h1>
 				</div>
 				<nav class="navegation">
-					<a class="navegation__link" href="#">Home</a>
-					<a class="navegation__link" href="#">Cardapio</a>
-					<a class="navegation__link" href="#">Vantagens</a>
-					<a class="navegation__link" href="#">Depoimentos</a>
+					<a class="navegation__link" href="#home">Home</a>
+					<a class="navegation__link" href="#dishes">Cardapio</a>
+					<a class="navegation__link" href="#advantages">Vantagens</a>
+					<a class="navegation__link" href="#review">Depoimentos</a>
 				</nav>
 				<div id="menu" class="menu" role="button" aria-label="Abre menu de navegação">
 					<div class="menu__line" aria-hidden="true"></div>
@@ -39,17 +39,17 @@
 							<div class="close__line"></div>
 						</div>
 						<nav class="navegation navegation--menu">
-							<a class="navegation__link navegation--menu__link--menu" href="#">Home</a>
-							<a class="navegation__link navegation--menu__link--menu" href="#">Cardapio</a>
-							<a class="navegation__link navegation--menu__link--menu" href="#">Vantagens</a>
-							<a class="navegation__link navegation--menu__link--menu" href="#">Depoimentos</a>
+							<a class="navegation__link navegation--menu__link--menu" href="#home">Home</a>
+							<a class="navegation__link navegation--menu__link--menu" href="#dishes">Cardapio</a>
+							<a class="navegation__link navegation--menu__link--menu" href="#advantages">Vantagens</a>
+							<a class="navegation__link navegation--menu__link--menu" href="#review">Depoimentos</a>
 						</nav>
 					</div>
 				</div>
 			</div>
 		</header>
 		<main>
-			<section class="section-banner">
+			<section id="home" class="section-banner">
 				<div class="banner">
 					<div class="hero">
 						<h1 class="hero__title">Sua comida favorita entregue na sua casa</h1>
@@ -66,7 +66,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="section-dishes">
+			<section id="dishes" class="section-dishes">
 				<div class="dishes">
 					<h2 class="dishes__subtitle">Veja nosso cardápio</h2>
 					<ul class="dishes__list">
@@ -116,7 +116,7 @@
 					<a href="#" class="dishes__button">Peça Agora</a>
 				</div>
 			</section>
-			<section class="section-order">
+			<section id="order" class="section-order">
 				<div class="order">
 					<h2 class="order__title">Receba em sua casa de forma fácil e segura</h2>
 					<ol class="order__list">
@@ -143,7 +143,7 @@
 					</ol>
 				</div>
 			</section>
-			<section class="section-advantages">
+			<section id="advantages" class="section-advantages">
 				<div class="advantages">
 					<div class="advantages__container-img">
 						<img class="advantages__img" src="/assets/images/rocket.png" alt="Foguete" />
@@ -167,7 +167,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="section-review">
+			<section id="review" class="section-review">
 				<div class="review">
 					<div class="testimonials">
 						<h2 class="testimonials__title ">O que falam de nós</h2>
@@ -190,6 +190,32 @@
 				</div>
 			</section>
 		</main>
+		<footer>
+			<section class="section-partners">
+				<div class="partners">
+					<h2 class="partners__title">Nossos Parceiros</h2>
+					<ul class="partners__list">
+						<li class="partners__item">
+							<img class="partners__image" src="/assets/images/ifood.png" alt="Ifood">
+						</li>
+						<li class="partners__item">
+							<img class="partners__image" src="/assets/images/99.png" alt="99">
+						</li>
+						<li class="partners__item">
+							<img class="partners__image" src="/assets/images/uber.png" alt="uber eats">
+						</li>
+						<li class="partners__item">
+							<img class="partners__image" src="/assets/images/rappi.png" alt="Rappi">
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="section-copyright">
+				<div class="copyright">
+					<p class="copyright__text">Desenvolvido por Michael Rocha</p>
+				</div>
+			</section>
+		</footer>
 		<script src="javascript/index.js"></script>
 	</body>
 </html>

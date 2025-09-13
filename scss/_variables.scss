@@ -1,0 +1,59 @@
+//colors
+$primary-color: #00334e;
+$segundary-color: #fff2d9;
+$tertiary-color: #00cc99;
+$background-color: #ffffff;
+$detail-color1: #444444;
+$detail-color2: #dcdcdc;
+$detail-color3: #eb1010;
+$detail-color4: rgb(0, 0, 0, 0.5);
+$detail-color5: #b42c2c;
+
+//fonts
+$primary-font: "DM Sans", sans-serif;
+
+//font weights
+$regular-weight: 400;
+$medium-weight: 500;
+$bold-weight: 700;
+
+//font sizes
+$small-size: 13;
+$base-size: 16;
+$medium-size: 18;
+$xmedium-size: 20;
+$xxmedium-size: 24;
+$large-size: 32;
+$xlarge-size: 42;
+$xxlarge-size: 52;
+
+//spacing
+$content-spacing: 1200;
+$padding-spacing: 50;
+$padding-spacing-small: 25;
+
+//breakpoints
+$desktop: 1250px;
+$notebook: 1050px;
+$tablet: 820px;
+$mobile: 580px;
+
+@mixin breakpoints($size) {
+    @if $size == $notebook {
+        @media screen and (max-width: 1050px) {
+            @content;
+        }
+    } @else if $size == $tablet {
+        @media screen and (max-width: 820px) {
+            @content;
+        }
+    } @else if $size == $mobile {
+        @media screen and (max-width: 580px) {
+            @content;
+        }
+    } @else if $size == $desktop {
+        @media screen and (max-width: 1250px) {
+            @content;
+        }
+    }
+}

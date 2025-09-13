@@ -1,0 +1,237 @@
+@use "variables" as var;
+
+//header
+
+body{
+    position: relative;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    background-color: var.$segundary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(15 / 16 * 1rem) calc(var.$padding-spacing / 16 * 1rem);
+    @include var.breakpoints(var.$tablet) {
+        padding: calc(15 / 16 * 1rem) calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}
+
+header > div {
+    width: 100%;
+    max-width: calc(var.$content-spacing / 16 * 1rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+section > div {
+    width: 100%;
+    max-width: calc(var.$content-spacing / 16 * 1rem);
+}
+
+.menu-modal {
+    background-color: var.$detail-color4;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    z-index: 3;
+
+    &--disabled {
+        display: none;
+    }
+}
+
+.close-animation {
+    animation-name: close;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.menu-navegation {
+    height: 100dvh;
+    width: 25dvh;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    background-color: var.$background-color;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    animation-name: slide-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+
+    &--disabled {
+        display: none;
+    }
+}
+
+.slide-out {
+    animation-name: slide-out;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0.1;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+        display: flex;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0.1;
+        display: none;
+    }
+}
+
+@keyframes close {
+    from {
+        display: block;
+    }
+    to {
+        display: none;
+    }
+}
+
+// banner
+main {
+    padding-top: calc(78 / 16 * 1rem);
+    background-color: var.$background-color;
+}
+
+.section-banner {
+    padding: calc(25 / 16 * 1rem) calc(var.$padding-spacing / 16 * 1rem);
+    width: 100%;
+    background-color: var.$segundary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include var.breakpoints(var.$tablet) {
+        padding: calc(25 / 16 * 1rem) calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}
+
+.banner {
+    max-width: calc(var.$content-spacing / 16 * 1rem);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @include var.breakpoints(var.$notebook) {
+        flex-direction: column;
+        align-items: center;
+        gap: calc(50 / 16 * 1rem);
+    }
+}
+
+//dishes
+
+.section-dishes {
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+    display: flex;
+    justify-content: center;
+    @include var.breakpoints(var.$tablet) {
+        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}
+
+//order
+
+.section-order {
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include var.breakpoints(var.$tablet) {
+        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}
+
+//advantages
+
+.section-advantages {
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include var.breakpoints(var.$tablet) {
+        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}
+
+// review
+
+.section-review {
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem) calc(60 / 16 * 1rem) calc(var.$padding-spacing / 16 * 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include var.breakpoints(var.$tablet) {
+        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem) calc(60 / 16 * 1rem) calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}
+
+.review {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    justify-content: space-between;
+
+    @include var.breakpoints(var.$tablet) {
+        flex-direction: column;
+    }
+}
+
+// partners
+
+.section-partners {
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var.$segundary-color;
+
+    @include var.breakpoints(var.$tablet) {
+        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}
+
+//copyright
+
+.section-copyright {
+    padding: 0 calc(var.$padding-spacing / 16 * 1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var.$background-color;
+
+    @include var.breakpoints(var.$tablet) {
+        padding: 0 calc(var.$padding-spacing-small / 16 * 1rem);
+    }
+}

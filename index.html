@@ -1,15 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>French fries</title>
-  <meta name="author" content="Michael Rocha">
-  <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>French fries</title>
+		<meta name="author" content="Michael Rocha" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500,700&display=swap" rel="stylesheet" />
+		<link rel="icon" href="assets/images/logo.png" type="image/x-icon" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<header>
+			<div>
+				<div class="logo">
+					<img class="logo__image" src="assets/images/logo.png" alt="Logo do French fries" />
+					<h1 class="logo__title">French fries</h1>
+				</div>
+				<nav class="navegation">
+					<a class="navegation__link" href="#home">Home</a>
+					<a class="navegation__link" href="#dishes">Cardapio</a>
+					<a class="navegation__link" href="#advantages">Vantagens</a>
+					<a class="navegation__link" href="#review">Depoimentos</a>
+				</nav>
+				<div id="menu" class="menu" role="button" aria-label="Abre menu de navegação">
+					<div class="menu__line" aria-hidden="true"></div>
+					<div class="menu__line" aria-hidden="true"></div>
+					<div class="menu__line" aria-hidden="true"></div>
+				</div>
+				<div id="modal" class="menu-modal menu-modal--disabled">
+					<div id="menu-navegation" class="menu-navegation menu-navegation--disabled">
+						<div id="close" class="close" role="button" aria-label="Fecha o menu de navegação">
+							<div class="close__line"></div>
+							<div class="close__line"></div>
+						</div>
+						<nav class="navegation navegation--menu">
+							<a class="navegation__link navegation--menu__link--menu" href="#home">Home</a>
+							<a class="navegation__link navegation--menu__link--menu" href="#dishes">Cardapio</a>
+							<a class="navegation__link navegation--menu__link--menu" href="#advantages">Vantagens</a>
+							<a class="navegation__link navegation--menu__link--menu" href="#review">Depoimentos</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section id="home" class="section-banner">
+				<div class="banner">
+					<div class="hero">
+						<h1 class="hero__title">Sua comida favorita entregue na sua casa</h1>
+						<p class="hero__text">Confira nossas promoções e combos exclusivos.</p>
+						<div class="hero__input-area">
+							<input class="hero__input" placeholder="Faça seu pedido agora" type="text" />
+							<button class="hero__button">
+								<img class="animation-arrow" src="assets/images/white-arrow.png" aria-hidden="true" aria-label="Enviar" />
+							</button>
+						</div>
+					</div>
+					<div class="container-image">
+						<img class="container-image__image" src="assets/images/delivery-made.png" alt="Entrega feita" />
+					</div>
+				</div>
+			</section>
+			<section id="dishes" class="section-dishes">
+				<div class="dishes">
+					<h2 class="dishes__subtitle">Veja nosso cardápio</h2>
+					<ul class="dishes__list">
+						<li class="dishes-item">
+							<div class="dishes-item__container-img">
+								<img class="dishes-item__image" src="assets/images/hambuguer-3.jpg" alt="Hamburguer Especial" />
+							</div>
+							<h3 class="dishes-item__title">Hamburguer Especial</h3>
+							<p class="dishes-item__text">hambuguer - bacon - alface</p>
+						</li>
+						<li class="dishes-item">
+							<div class="dishes-item__container-img">
+								<img class="dishes-item__image" src="assets/images/hambuguer-1.jpg" alt="Hamburguer Especial com fritas" />
+							</div>
+							<h3 class="dishes-item__title">Hamburguer Especial com fritas</h3>
+							<p class="dishes-item__text">hambuguer - bacon - alface - fritas</p>
+						</li>
+						<li class="dishes-item">
+							<div class="dishes-item__container-img">
+								<img class="dishes-item__image" src="assets/images/hambuguer-2.jpg" alt="Combo hamburguer Especial" />
+							</div>
+							<h3 class="dishes-item__title">Combo hamburguer Especial</h3>
+							<p class="dishes-item__text">hambuguer - bacon - alface - fritas - molhos</p>
+						</li>
+						<li class="dishes-item">
+							<div class="dishes-item__container-img">
+								<img class="dishes-item__image" src="assets/images/pizza-3.jpg" alt="Combo três pizzas" />
+							</div>
+							<h3 class="dishes-item__title">Combo três pizzas</h3>
+							<p class="dishes-item__text">Calabresa - Portuguesa - Brócolis com queijo</p>
+						</li>
+						<li class="dishes-item">
+							<div class="dishes-item__container-img">
+								<img class="dishes-item__image" src="assets/images/pizza-2.jpg" alt="Pizza portuguesa" />
+							</div>
+							<h3 class="dishes-item__title">Pizza portuguesa</h3>
+							<p class="dishes-item__text">presunto - queijo - milho</p>
+						</li>
+						<li class="dishes-item">
+							<div class="dishes-item__container-img">
+								<img class="dishes-item__image" src="assets/images/pizza-1.jpg" alt="Pizza brócolis com queijo" />
+							</div>
+							<h3 class="dishes-item__title">Pizza brócolis com queijo</h3>
+							<p class="dishes-item__text">queijo - brócolis</p>
+						</li>
+					</ul>
+					<a href="#" class="dishes__button">Peça Agora</a>
+				</div>
+			</section>
+			<section id="order" class="section-order">
+				<div class="order">
+					<h2 class="order__title">Receba em sua casa de forma fácil e segura</h2>
+					<ol class="order__list">
+						<li class="order-item">
+							<div class="order-item__number">1</div>
+							<img class="order-item__img" src="/assets/images/flow-3.jpg" aria-hidden="true" />
+							<h3 class="order-item__title">Faça o pedido online</h3>
+							<p class="order-item__text">Faça seu pedido de forma prática e fácil através do WhatsApp</p>
+						</li>
+						<li class="order-item">
+							<div class="order-item__number">2</div>
+							<img class="order-item__img" src="/assets/images/flow-1.jpg" aria-hidden="true" />
+							<h3 class="order-item__title">Preparando seu pedido</h3>
+							<p class="order-item__text">
+								Ao completar seu pedido iremos encaminha-lo a cozinha, embalar e enviar para a entrega.
+							</p>
+						</li>
+						<li class="order-item">
+							<div class="order-item__number">3</div>
+							<img class="order-item__img" src="/assets/images/flow-2.jpg" aria-hidden="true" />
+							<h3 class="order-item__title">Receba em sua casa</h3>
+							<p class="order-item__text">Receba o seu pedido no portão da sua casa.</p>
+						</li>
+					</ol>
+				</div>
+			</section>
+			<section id="advantages" class="section-advantages">
+				<div class="advantages">
+					<div class="advantages__container-img">
+						<img class="advantages__img" src="/assets/images/rocket.png" alt="Foguete" />
+					</div>
+					<div class="advantages__container-list">
+						<h2 class="advantages__title">Vantagens de comprar conosco</h2>
+						<ol class="advantages__list">
+							<li class="advantages__item">
+								<h3 class="advantages__subtitle">Vantagem número um</h3>
+								<p class="advantages__text">Atendimento rápido, sem demora!</p>
+							</li>
+							<li class="advantages__item">
+								<h3 class="advantages__subtitle">Vantagem número dois</h3>
+								<p class="advantages__text">Entrega rápida, pediu chegou!</p>
+							</li>
+							<li class="advantages__item">
+								<h3 class="advantages__subtitle">Vantagem número três</h3>
+								<p class="advantages__text">Comida feita pelos chefs mais renomados!</p>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+			<section id="review" class="section-review">
+				<div class="review">
+					<div class="testimonials">
+						<h2 class="testimonials__title ">O que falam de nós</h2>
+						<p class="testimonials__text testimonials__text--show">"Os pratos são incríveis, cheios de sabor e com uma apresentação que encanta. Saí muito satisfeita. Excelente! Voltarei sempre que puder."</p>
+						<p class="testimonials__text">"Sem dúvida uma das melhores refeições que tive recentemente. Recomendo a todos que gostam de boa comida e bom serviço! A equipe foi muito atenciosa e prestativa, fizeram toda a diferença para tornar especial."</p>
+						<div class="testimonials__users">
+							<div class="user user--show">
+								<img class="user__image" src="/assets/images/user.png" alt="Imagem do usuário">
+								<p class="user__name">Lucilia de Lima</p>
+							</div>
+							<div class="user">
+								<img class="user__image" src="/assets/images/user.png" alt="Imagem do usuário">
+								<p class="user__name">Theo Rocha</p>
+							</div>
+						</div>
+					</div>
+					<div class="rating">
+						<img class="rating__image" src="/assets/images/depoimentos.jpg" alt="Imagem de cinco estrelas">
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<section class="section-partners">
+				<div class="partners">
+					<h2 class="partners__title">Nossos Parceiros</h2>
+					<ul class="partners__list">
+						<li class="partners__item">
+							<img class="partners__image" src="/assets/images/ifood.png" alt="Ifood">
+						</li>
+						<li class="partners__item">
+							<img class="partners__image" src="/assets/images/99.png" alt="99">
+						</li>
+						<li class="partners__item">
+							<img class="partners__image" src="/assets/images/uber.png" alt="uber eats">
+						</li>
+						<li class="partners__item">
+							<img class="partners__image" src="/assets/images/rappi.png" alt="Rappi">
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="section-copyright">
+				<div class="copyright">
+					<p class="copyright__text">Desenvolvido por Michael Rocha</p>
+				</div>
+			</section>
+		</footer>
+		<script src="javascript/index.js"></script>
+	</body>
 </html>

@@ -1,0 +1,727 @@
+@use "variables" as var;
+
+%logo-title {
+    font-family: var.$primary-font;
+    font-size: calc(var.$base-size / 16 * 1rem);
+    font-weight: var.$bold-weight;
+    color: var.$primary-color;
+    text-transform: uppercase;
+}
+
+%navegation-text {
+    font-family: var.$primary-font;
+    font-size: calc(var.$base-size / 16 * 1rem);
+    font-weight: var.$medium-weight;
+    color: var.$detail-color1;
+}
+
+%hero-title {
+    font-family: var.$primary-font;
+    font-size: calc(var.$xxlarge-size / 16 * 1rem);
+    font-weight: var.$bold-weight;
+    color: var.$primary-color;
+}
+
+%hero-text {
+    font-family: var.$primary-font;
+    font-size: calc(var.$xmedium-size / 16 * 1rem);
+    font-weight: var.$regular-weight;
+    color: var.$primary-color;
+}
+
+%hero-input {
+    font-family: var.$primary-font;
+    font-size: calc(var.$small-size / 16 * 1rem);
+    font-weight: var.$regular-weight;
+    color: var.$primary-color;
+}
+
+%dishes-title {
+    font-family: var.$primary-font;
+    font-size: calc(var.$large-size / 16 * 1rem);
+    font-weight: var.$bold-weight;
+    color: var.$primary-color;
+}
+
+%dishes-subtitle {
+    font-family: var.$primary-font;
+    font-size: calc(var.$medium-size / 16 * 1rem);
+    font-weight: var.$bold-weight;
+    color: var.$primary-color;
+}
+
+%dishes-text {
+    font-family: var.$primary-font;
+    font-size: calc(var.$base-size / 16 * 1rem);
+    font-weight: var.$regular-weight;
+    color: var.$primary-color;
+}
+
+%order-number {
+    font-family: var.$primary-font;
+    font-size: calc(var.$xxmedium-size / 16 * 1rem);
+    font-weight: var.$bold-weight;
+    color: var.$background-color;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    &__image {
+        max-width: calc(48 / 16 * 1rem);
+        width: 100%;
+    }
+
+    &__title {
+        @extend %logo-title;
+    }
+}
+
+.navegation {
+    max-width: calc(387 / 16 * 1rem);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include var.breakpoints(var.$notebook) {
+        display: none;
+    }
+
+    &__link {
+        @extend %navegation-text;
+        transition: color 0.4s ease-in-out;
+
+        &:hover {
+            color: var.$tertiary-color;
+        }
+    }
+}
+
+.menu {
+    height: calc(17 / 16 * 1rem);
+    width: calc(30 / 16 * 1rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    cursor: pointer;
+    display: none;
+
+    @include var.breakpoints(var.$notebook) {
+        display: flex;
+
+        &--disabled {
+            animation-name: menu-disabled;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            display: none;
+        }
+    }
+
+    &__line {
+        height: calc(3 / 16 * 1rem);
+        width: calc(30 / 16 * 1rem);
+        background-color: var.$primary-color;
+
+        &:last-child {
+            width: calc(15 / 16 * 1rem);
+        }
+    }
+
+    &:hover .menu__line:last-child {
+        width: calc(30 / 16 * 1rem);
+        transition: width 0.4s ease-in-out;
+    }
+}
+
+.close {
+    width: calc(30 / 16 * 1rem);
+    height: calc(30 / 16 * 1rem);
+    position: relative;
+    cursor: pointer;
+    align-self: flex-end;
+    margin: calc(30 / 16 * 1rem) calc(30 / 16 * 1rem) 0 0;
+
+    &__line {
+        background-color: var.$detail-color5;
+        width: calc(6 / 16 * 1rem);
+        height: calc(30 / 16 * 1rem);
+        transform: rotate(45deg);
+        position: absolute;
+        top: 0%;
+        bottom: 0%;
+        right: 40%;
+        transition: 0.5s;
+
+        &:last-child {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &:hover .close__line {
+        background-color: var.$detail-color3;
+    }
+}
+
+.navegation--menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__link--menu {
+        text-transform: uppercase;
+        font-weight: var.$medium-weight;
+        font-size: calc(var.$xmedium-size / 16 * 1rem);
+        text-shadow: 1px 1px 2px var.$detail-color1;
+    }
+}
+
+@keyframes menu-disabled {
+    from {
+        display: flex;
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+//banner
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: calc(20 / 16 * 1rem);
+
+    @include var.breakpoints(var.$notebook) {
+        align-items: center;
+        text-align: center;
+    }
+
+    &__title {
+        padding: calc(40 / 16 * 1rem) 0 0 0;
+        @extend %hero-title;
+        width: calc(600 / 16 * 1rem);
+
+        @include var.breakpoints(var.$notebook) {
+            padding: calc(20 / 16 * 1rem) 0 0 0;
+        }
+
+        @include var.breakpoints(var.$mobile) {
+            font-size: calc(var.$large-size / 16 * 1rem);
+            width: auto;
+            font-weight: var.$bold-weight;
+        }
+    }
+
+    &__text {
+        @extend %hero-text;
+        @include var.breakpoints(var.$mobile) {
+            font-size: calc(var.$base-size / 16 * 1rem);
+        }
+    }
+
+    &__input-area {
+        display: flex;
+    }
+
+    &__input {
+        width: calc(360 / 16 * 1rem);
+        background-color: var.$background-color;
+        padding: calc(22 / 16 * 1rem) 0 calc(22 / 16 * 1rem) calc(55 / 16 * 1rem);
+        border-radius: 8px 0 0 8px;
+        background-image: url(../assets/images/whatsapp.png);
+        background-repeat: no-repeat;
+        background-size: 6%;
+        background-position: 5% 50%;
+        @extend %hero-input;
+        @include var.breakpoints(var.$mobile) {
+            width: calc(230 / 16 * 1rem);
+            height: calc(50 / 16 * 1rem);
+            padding: calc(10 / 16 * 1rem) 0 calc(10 / 16 * 1rem) calc(55 / 16 * 1rem);
+        }
+
+        &::placeholder {
+            @extend %hero-input;
+        }
+    }
+
+    &__button {
+        height: calc(63.5 / 16 * 1rem);
+        width: calc(60 / 16 * 1rem);
+        background-color: var.$primary-color;
+        border-radius: 0 8px 8px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include var.breakpoints(var.$mobile) {
+            height: calc(50 / 16 * 1rem);
+            width: calc(50 / 16 * 1rem);
+        }
+    }
+}
+
+.animation-arrow {
+    animation-name: arrow-motion;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes arrow-motion {
+    0% {
+        margin: 0 0 0 0;
+    }
+    25% {
+        margin: 0 15px 0 0;
+    }
+    50% {
+        margin: 0 0 0 0;
+    }
+    75% {
+        margin: 0 0 0 15px;
+    }
+    100% {
+        margin: 0 0 0 0;
+    }
+}
+
+.container-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__image {
+        animation-name: delivery;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        @include var.breakpoints(var.$mobile) {
+            width: 80%;
+        }
+    }
+}
+
+@keyframes delivery {
+    0% {
+        transform: translateX(120%) rotate(4deg);
+    }
+    70% {
+        transform: translateX(0%) rotate(0deg);
+    }
+    80% {
+        transform: translateX(-10%) rotate(-2deg);
+    }
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+//dishes
+
+.dishes {
+    padding-top: calc(100 / 16 * 1rem);
+    width: 100%;
+    max-width: calc(var.$content-spacing / 16 * 1rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__subtitle {
+        @extend %dishes-title;
+        padding-bottom: calc(25 / 16 * 1rem);
+        @include var.breakpoints(var.$mobile) {
+            text-align: center;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: calc(55 / 16 * 1rem) calc(40 / 16 * 1rem);
+        padding-bottom: calc(35 / 16 * 1rem);
+
+        @include var.breakpoints(var.$notebook) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: calc(50 / 16 * 1rem);
+        }
+
+        @include var.breakpoints(var.$tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__button {
+        padding: calc(15 / 16 * 1rem) calc(43 / 16 * 1rem);
+        @extend %dishes-text;
+        color: var.$background-color;
+        background-color: var.$tertiary-color;
+        border-radius: 200px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 70px;
+            left: -16px;
+            top: -8px;
+            transform: rotate(26deg);
+            background-color: var.$background-color;
+            opacity: 0.4;
+        }
+    }
+}
+
+.dishes-item {
+    &__container-img {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 0%;
+            left: -2%;
+            top: -3%;
+            background-color: var.$primary-color;
+            z-index: 1;
+            transition: 1s;
+            transition-timing-function: ease-in-out;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 0%;
+            right: -2%;
+            bottom: -3%;
+            background-color: var.$tertiary-color;
+            z-index: 1;
+            transition: 1s;
+            transition-timing-function: ease-in-out;
+        }
+    }
+    &:hover .dishes-item__container-img::before {
+        width: 80%;
+        height: 80%;
+    }
+    &:hover .dishes-item__container-img::after {
+        width: 80%;
+        height: 80%;
+    }
+    &__image {
+        position: relative;
+        z-index: 2;
+    }
+    &__title {
+        @extend %dishes-subtitle;
+        padding: calc(20 / 16 * 1rem) 0 calc(10 / 16 * 1rem) 0;
+    }
+    &__text {
+        @extend %dishes-text;
+    }
+}
+
+.shine::before {
+    animation-name: shine;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes shine {
+    from {
+        left: -16px;
+    }
+    to {
+        left: 175px;
+    }
+}
+
+//order
+
+.order {
+    padding: calc(125 / 16 * 1rem) 0 calc(135 / 16 * 1rem) 0;
+
+    &__title {
+        @extend %dishes-title;
+        text-align: center;
+        padding-bottom: calc(45 / 16 * 1rem);
+    }
+    &__list {
+        display: flex;
+        gap: calc(40 / 16 * 1rem);
+
+        @include var.breakpoints(var.$desktop) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @include var.breakpoints(var.$tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.order-item {
+    max-width: calc(359 / 16 * 1rem);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__number {
+        background-color: var.$tertiary-color;
+        width: 100%;
+        height: 100%;
+        max-width: calc(40 / 16 * 1rem);
+        max-height: calc(40 / 16 * 1rem);
+        border: solid 1px var.$tertiary-color;
+        border-radius: calc(20 / 16 * 1rem);
+        position: absolute;
+        top: 0;
+        right: 65%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @extend %order-number;
+    }
+
+    &__title {
+        @extend %dishes-subtitle;
+        padding: calc(18 / 16 * 1rem) 0 calc(10 / 16 * 1rem) 0;
+    }
+
+    &__text {
+        text-align: center;
+        @extend %dishes-text;
+    }
+}
+
+//advantages
+
+.advantages {
+    padding: calc(100 / 16 * 1rem) 0;
+    display: flex;
+    justify-content: center;
+    gap: calc(60 / 16 * 1rem);
+
+    @include var.breakpoints(var.$tablet) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__container-img {
+        background-color: var.$segundary-color;
+        border: solid 1px var.$segundary-color;
+        border-radius: 25px;
+        position: relative;
+        width: calc(514 / 16 * 1rem);
+        height: calc(382 / 16 * 1rem);
+
+        @include var.breakpoints(var.$desktop) {
+            width: calc(414 / 16 * 1rem);
+            height: calc(312 / 16 * 1rem);
+        }
+
+        @include var.breakpoints(var.$mobile) {
+            width: calc(304 / 16 * 1rem);
+            height: calc(232 / 16 * 1rem);
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: -25%;
+        left: 0;
+        animation: rocket 2.8s ease-in-out infinite;
+
+        @include var.breakpoints(var.$mobile) {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        @extend %dishes-title;
+        padding-bottom: calc(46 / 16 * 1rem);
+
+        @include var.breakpoints(var.$desktop) {
+            padding-bottom: calc(26 / 16 * 1rem);
+            font-size: calc(var.$xxmedium-size / 16 * 1rem);
+            text-align: center;
+        }
+    }
+
+    &__list {
+        counter-reset: item;
+    }
+
+    &__item {
+        counter-increment: item;
+        position: relative;
+        padding: 0 0 calc(40 / 16 * 1rem) calc(65 / 16 * 1rem);
+
+        @include var.breakpoints(var.$notebook) {
+            padding: 0 0 calc(20 / 16 * 1rem) calc(65 / 16 * 1rem);
+        }
+
+        &::before {
+            content: "0" counter(item);
+            position: absolute;
+            left: 0%;
+            top: -8%;
+            font-family: var.$primary-font;
+            font-size: calc(var.$xlarge-size / 16 * 1rem);
+            font-weight: var.$regular-weight;
+            color: var.$detail-color2;
+        }
+    }
+
+    &__subtitle {
+        @extend %logo-title;
+        text-transform: none;
+        padding-bottom: calc(2 / 16 * 1rem);
+    }
+
+    &__text {
+        @extend %dishes-text;
+    }
+}
+
+@keyframes rocket {
+    0% {
+        top: -25%;
+    }
+    50% {
+        top: -35%;
+    }
+    100% {
+        top: -25%;
+    }
+}
+
+.testimonials {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        @extend %dishes-title;
+        text-align: center;
+        padding-bottom: calc(20 / 16 * 1rem);
+    }
+
+    &__text {
+        @extend %dishes-text;
+        font-size: var.$medium-size;
+        line-height: calc(36 / 16 * 1rem);
+        max-width: calc(500 / 16 * 1rem);
+        display: none;
+
+        &--show {
+            display: flex;
+        }
+    }
+
+    &__users {
+        display: flex;
+        padding-top: calc(38 / 16 * 1rem);
+        justify-content: space-around;
+        gap: calc(10 / 16 * 1rem);
+    }
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: calc(10 / 16 * 1rem);
+    cursor: pointer;
+    opacity: 0.4;
+
+    &--show {
+        opacity: 1;
+    }
+
+    &__image {
+        width: calc(30 / 16 * 1rem);
+    }
+
+    &__name {
+        @extend %logo-title;
+        text-transform: none;
+    }
+}
+
+.rating {
+    width: 100%;
+    max-width: calc(600 / 16 * 1rem);
+
+    @include var.breakpoints(var.$notebook) {
+        width: 80%;
+    }
+
+    @include var.breakpoints(var.$tablet) {
+        width: 100%;
+    }
+
+    &__image {
+        width: 100%;
+    }
+}
+
+// partners
+
+.partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        @extend %dishes-title;
+        padding: calc(26 / 16 * 1rem) 0;
+        text-align: center;
+    }
+
+    &__list {
+        width: 100%;
+        padding-bottom: calc(26 / 16 * 1rem);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: calc(40 / 16 * 1rem);
+
+        @include var.breakpoints(var.$tablet) {
+            flex-direction: column;
+        }
+    }
+}
+
+// copyright
+
+.copyright {
+    padding: calc(25 / 16 * 1rem) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__text {
+        text-align: center;
+        @extend %logo-title;
+        text-transform: none;
+    }
+}

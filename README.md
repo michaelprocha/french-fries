@@ -1,4 +1,4 @@
-# Portfolio
+# French fries
 
 Este projeto é um site de página única para restaurantes, desenvolvido com HTML, SCSS e JavaScript. O site simula uma landing page moderna de restaurante, com seções como banner, cardápio, etapas do pedido, vantagens, depoimentos e parceiros.
 

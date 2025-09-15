@@ -1,6 +1,6 @@
 # French fries
 
-Este projeto é um site de página única para restaurantes, desenvolvido com HTML, SCSS e JavaScript. O site simula uma landing page moderna de restaurante, com seções como banner, cardápio, etapas do pedido, vantagens, depoimentos e parceiros.
+This project is a restaurant single-page website built with HTML, SCSS, and JavaScript. The site simulates a modern restaurant landing page with sections such as banner, menu, order steps, advantages, testimonials, and partners.
 
 ---
 
